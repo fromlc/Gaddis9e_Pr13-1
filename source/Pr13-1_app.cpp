@@ -11,7 +11,6 @@
 #include <cstdlib>
 #include <iostream>
 
-
 //----------------------------------------------------------------------
 // using symbols
 //----------------------------------------------------------------------
@@ -60,6 +59,7 @@ int main() {
 //----------------------------------------------------------------------
 bool doAnotherRect(double& rectWidth, double& rectLength) {
 	string input;
+
 	cout << "Enter the width (0 quits): ";
 	cin >> input;
 	rectWidth = validateDouble(input);

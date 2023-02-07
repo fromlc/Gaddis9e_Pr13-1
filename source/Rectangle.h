@@ -1,13 +1,11 @@
 //----------------------------------------------------------------------
-// Rectangle.h
+// Rectangle.h : class declaration
 //  
 // Author: Tony Gaddis
-//
-// Rectangle class declaration and definition
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// class declaration
+// Rectangle
 //----------------------------------------------------------------------
 class Rectangle {
 private:
@@ -21,32 +19,3 @@ public:
     double getLength() const;
     double getArea() const;
 };
-
-//----------------------------------------------------------------------
-// class definition
-//----------------------------------------------------------------------
-
-//----------------------------------------------------------------------
-// setWidth assigns a value to the width member.
-//----------------------------------------------------------------------
-void Rectangle::setWidth(double w) { width = w; }
-
-//----------------------------------------------------------------------
-// setLength assigns a value to the length member.
-//----------------------------------------------------------------------
-void Rectangle::setLength(double len) { length = len; }
-
-//----------------------------------------------------------------------
-// getWidth returns the value in the width member.
-//----------------------------------------------------------------------
-double Rectangle::getWidth() const { return width; }
-
-//----------------------------------------------------------------------
-// getLength returns the value in the length member.
-//----------------------------------------------------------------------
-double Rectangle::getLength() const { return length; }
-
-//----------------------------------------------------------------------
-// getArea returns the product of width times length.
-//----------------------------------------------------------------------
-double Rectangle::getArea() const { return width * length; }
