@@ -6,9 +6,11 @@
 // 
 // Modified app code for Program 13-1 on pp. 732-734
 //----------------------------------------------------------------------
+#include "Rectangle.h"
+
+#include <cstdlib>
 #include <iostream>
 
-#include "Rectangle.h"
 
 //----------------------------------------------------------------------
 // using symbols
@@ -16,12 +18,14 @@
 using std::cin;
 using std::cout;
 using std::endl;
+using std::string;
 
 //----------------------------------------------------------------------
 // local function prototypes
 //----------------------------------------------------------------------
 bool doAnotherRect(double&, double&);
 void displayRect(Rectangle&);
+double validateDouble(string&);
 
 //----------------------------------------------------------------------
 // entry point
@@ -55,26 +59,19 @@ int main() {
 // - return false when user enters 0 for width, true otherwise
 //----------------------------------------------------------------------
 bool doAnotherRect(double& rectWidth, double& rectLength) {
+	string input;
 	cout << "Enter the width (0 quits): ";
-	cin >> rectWidth;
+	cin >> input;
+	rectWidth = validateDouble(input);
 
 	// 0 width means user wants to quit
 	if (!rectWidth) {
 		return false;
 	}
 
-	// use absolute value
-	if (rectWidth < 0) {
-		rectWidth = -rectWidth;
-	}
-
 	cout << "Enter the length: ";
-	cin >> rectLength;
-
-	// use absolute value
-	if (rectLength < 0) {
-		rectLength = -rectLength;
-	}
+	cin >> input;
+	rectLength = validateDouble(input);
 
 	return true;
 }
@@ -88,4 +85,15 @@ void displayRect(Rectangle& r) {
 	cout << "Width: " << r.getWidth() << '\n';
 	cout << "Length: " << r.getLength() << '\n';
 	cout << "Area: " << r.getArea() << "\n\n";
+}
+
+//----------------------------------------------------------------------
+// convert user input to a non-negative double value
+// if passed string can be converted to a double value,
+// return the absolute value, otherwise return 0
+//----------------------------------------------------------------------
+double validateDouble(string& input) {
+	double d = strtod(input.c_str(), nullptr);
+
+	return d >= 0 ? d : -d;
 }
