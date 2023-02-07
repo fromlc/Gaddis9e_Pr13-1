@@ -9,8 +9,7 @@
 //----------------------------------------------------------------------
 // class declaration
 //----------------------------------------------------------------------
-class Rectangle
-{
+class Rectangle {
 private:
     double width;
     double length;
