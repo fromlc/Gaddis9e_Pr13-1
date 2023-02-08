@@ -20,10 +20,15 @@ using std::endl;
 using std::string;
 
 //----------------------------------------------------------------------
+// globals
+//----------------------------------------------------------------------
+Rectangle g_box;		// Define an instance of the Rectangle class
+
+//----------------------------------------------------------------------
 // local function prototypes
 //----------------------------------------------------------------------
 bool doAnotherRect(double&, double&);
-void displayRect(Rectangle&);
+void displayRect();
 double validateDouble(string&);
 
 //----------------------------------------------------------------------
@@ -31,7 +36,6 @@ double validateDouble(string&);
 //----------------------------------------------------------------------
 int main() {
 
-	Rectangle box;		// Define an instance of the Rectangle class
 	double width;		// Local variable for width
 	double length;		// Local variable for length
 
@@ -42,10 +46,10 @@ int main() {
 	while (doAnotherRect(width, length)) {
 
 		// Store the rectangle's width and length in the box object
-		box.setWidth(width);
-		box.setLength(length);
+		g_box.setWidth(width);
+		g_box.setLength(length);
 
-		displayRect(box);
+		displayRect();
 	}
 
 	cout << "\nGoodbye!\n\n";
@@ -77,14 +81,14 @@ bool doAnotherRect(double& rectWidth, double& rectLength) {
 }
 
 //----------------------------------------------------------------------
-// display Rectangle data
+// display Rectangle data in global g_box
 //----------------------------------------------------------------------
-void displayRect(Rectangle& r) {
+void displayRect() {
 
 	cout << "Your rectangle's data:\n";
-	cout << "Width: " << r.getWidth() << '\n';
-	cout << "Length: " << r.getLength() << '\n';
-	cout << "Area: " << r.getArea() << "\n\n";
+	cout << "Width: " << g_box.getWidth() << '\n';
+	cout << "Length: " << g_box.getLength() << '\n';
+	cout << "Area: " << g_box.getArea() << "\n\n";
 }
 
 //----------------------------------------------------------------------
