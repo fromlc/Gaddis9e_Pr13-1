@@ -4,7 +4,7 @@
 // Author: Tony Gaddis
 // Modified by: Prof. Linda C
 // 
-// Modified app code for Program 13-1 on pp. 732-734
+// Modified app code for Program 13-1 on pp. 732-734 of Gaddis 9E
 //----------------------------------------------------------------------
 #include "Rectangle.h"
 
