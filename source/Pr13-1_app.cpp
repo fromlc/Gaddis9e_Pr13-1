@@ -22,7 +22,7 @@ using std::string;
 //----------------------------------------------------------------------
 // globals
 //----------------------------------------------------------------------
-Rectangle g_box;		// Define an instance of the Rectangle class
+Rectangle g_box;
 
 //----------------------------------------------------------------------
 // local function prototypes
@@ -36,8 +36,8 @@ double validateDouble(string&);
 //----------------------------------------------------------------------
 int main() {
 
-	double width;		// Local variable for width
-	double length;		// Local variable for length
+	double width;
+	double length;
 
 	// app banner
 	cout << "\nThis program calculates the area of a rectangle.\n\n";
@@ -45,7 +45,7 @@ int main() {
 	// run until user quits
 	while (doAnotherRect(width, length)) {
 
-		// Store the rectangle's width and length in the box object
+		// store user's rectangle data
 		g_box.setWidth(width);
 		g_box.setLength(length);
 
@@ -93,7 +93,7 @@ void displayRect() {
 
 //----------------------------------------------------------------------
 // convert user input to a non-negative double value
-// if passed string can be converted to a double value,
+// if passed string can be converted to a double value then
 // return the absolute value, otherwise return 0
 //----------------------------------------------------------------------
 double validateDouble(string& input) {
